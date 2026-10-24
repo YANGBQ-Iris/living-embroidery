@@ -13,7 +13,7 @@ export class Presentation {
   full.hidden=!document.fullscreenEnabled||!document.documentElement.requestFullscreen;
   full.onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{this.notify('当前浏览器未能进入全屏，可使用 F11 展示。');}};
   document.addEventListener('fullscreenchange',()=>{const active=!!document.fullscreenElement;full.setAttribute('aria-pressed',String(active));full.setAttribute('aria-label',active?'退出全屏展示':'进入全屏展示');full.title=active?'退出全屏展示':'全屏展示';});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.fullscreenElement){e.stopImmediatePropagation();document.exitFullscreen().catch(()=>{});}},true);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.fullscreenElement&&!document.querySelector('dialog[open]')){e.stopImmediatePropagation();document.exitFullscreen().catch(()=>{});}},true);
   this.watch(document.querySelector('#scene-video'),['intro','passage']);this.watch(document.querySelector('#ambient-video'),['pressure','moisture']);
  }
  notify(text){document.dispatchEvent(new CustomEvent('garden-notify',{detail:text}));}
@@ -22,10 +22,10 @@ export class Presentation {
  showStep(step){this.step=step;document.querySelector('#guide-step').textContent=step===0?'游园指引 · 1 / 2':'游园指引 · 2 / 2';document.querySelector('#guide-copy').textContent=step===0?'先轻触一株植物，看看它。再次轻触，就能走进它的互动世界。':'向下滑动空白天空，或点击“展开花笺”，收藏的作品、照片和日记就在这里。';document.querySelector('#guide-next').textContent=step===0?'下一步':'知道了，开始探索';clearTimeout(this.timer);this.timer=setTimeout(()=>this.dismiss(),18000);}
  dismiss(){clearTimeout(this.timer);this.guide.hidden=true;this.seen=true;try{localStorage.setItem('symbiotic-guide-v1','done');}catch{}}
  photosOpened(){if(!this.guide.hidden)this.dismiss();}
- hideStatus(){clearTimeout(this.waiting);clearTimeout(this.slow);this.status.hidden=true;}
+ hideStatus(){clearTimeout(this.waiting);clearTimeout(this.slow);this.status.hidden=true;document.body.dataset.mediaState='ready';}
  watch(video,scenes){
   const active=()=>scenes.includes(this.scene);
-  const show=(failed=false)=>{if(!active())return;this.status.hidden=false;this.status.classList.toggle('failed',failed);this.status.querySelector('span').textContent=failed?(scenes.includes('intro')?'画面暂时未能加载，可继续探索花园。':'背景暂时未能加载，仍可继续互动。'):scenes.includes('intro')?'画面正在轻轻展开…':'背景正在缓冲，仍可继续互动。';document.querySelector('#continue-garden').hidden=!scenes.includes('intro')||!failed;};
+  const show=(failed=false)=>{if(!active())return;this.status.hidden=false;document.body.dataset.mediaState=failed?'fallback':'loading';const state=document.querySelector('.interlude-state');if(state)state.textContent=failed?'影片暂不可用 · 临时动态画面可用':'资源加载中 · 临时动态画面';this.status.classList.toggle('failed',failed);this.status.querySelector('span').textContent=failed?(scenes.includes('intro')?'画面暂时未能加载，可继续探索花园。':'背景暂时未能加载，仍可继续互动。'):scenes.includes('intro')?'画面正在轻轻展开…':'背景正在缓冲，仍可继续互动。';document.querySelector('#continue-garden').hidden=!scenes.includes('intro')||!failed;};
   const wait=()=>{if(!active())return;clearTimeout(this.waiting);clearTimeout(this.slow);this.waiting=setTimeout(()=>show(),550);this.slow=setTimeout(()=>{if(video.paused||video.readyState<3)show(true);},6500);};
   for(const event of ['waiting','stalled','loadstart'])video.addEventListener(event,wait);
   for(const event of ['playing','canplay','ended'])video.addEventListener(event,()=>{if(active())this.hideStatus();});

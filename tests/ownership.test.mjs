@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {recordPlantId,recordsForPlant,recordPlantName,validateRecord} from '../src/state.js';
+test('legacy artwork has safe ownership, ambiguous notes remain unclassified',()=>{assert.equal(recordPlantId({kind:'art',mode:'pressure'}),'orchid');assert.equal(recordPlantId({kind:'art',mode:'moisture'}),'round');assert.equal(recordPlantId({kind:'note',name:'我的植物'}),null);assert.equal(recordPlantName({kind:'growth'}),'旧版未分类');});
+test('plant statistics do not mix records and invalid new ownership is rejected',()=>{const records=[{kind:'art',mode:'moisture',plantId:'round'},{kind:'note',plantId:'violet'},{kind:'note'}];assert.equal(recordsForPlant(records,'violet').length,1);assert.equal(recordsForPlant(records,'round').length,1);assert.throws(()=>validateRecord({id:'x',kind:'note',timestamp:1,plantId:'unknown'}));assert.equal(validateRecord({id:'x',kind:'note',timestamp:1}).id,'x');});

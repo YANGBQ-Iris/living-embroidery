@@ -1,8 +1,8 @@
 export const PLANTS = [
- {id:'orchid',name:'蝴蝶兰',en:'A gentle touch',file:'plant-orchid.png',module:'pressure',hint:'触碰 · 压力互动'},
- {id:'white',name:'花间手记',en:'Little observations',file:'plant-white.png',module:'journal',hint:'写下 · 生长记录'},
- {id:'round',name:'一滴雨',en:'A little rain',file:'plant-round.png',module:'moisture',hint:'浇灌 · 土壤湿度互动'},
- {id:'violet',name:'紫叶的心事',en:'Quiet feelings',file:'plant-violet.png',module:'mood',hint:'看看 · 互动心情'}
+ {id:'orchid',name:'蝴蝶兰',en:'A gentle touch',file:'plant-orchid.png',module:'pressure',hint:'触碰 · 光迹回应'},
+ {id:'white',name:'白花',en:'Little observations',file:'plant-white.png',module:'journal',hint:'观察 · 花间日记'},
+ {id:'round',name:'圆叶',en:'A little rain',file:'plant-round.png',module:'moisture',hint:'浇灌 · 水滴回应'},
+ {id:'violet',name:'紫叶',en:'Quiet feelings',file:'plant-violet.png',module:'mood',hint:'陪伴 · 植物心情'}
 ];
 export const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function selectPlant(selected,id){return {selected:id,enter:selected===id};}
@@ -15,4 +15,8 @@ export function plantMood(records,now=Date.now()){
  if(last&&now-last.timestamp<24*3600e3)return {face:'✿',title:'今天，见到你真好',copy:'这一小段相伴，已经被好好收藏。',type:'happy'};
  return {face:'☘',title:'安静地，等你靠近',copy:'不必每天打卡，有空来坐一会儿就好。',type:'calm'};
 }
-export function validateRecord(r){if(!r||typeof r.id!=='string'||!Number.isFinite(r.timestamp)||!['art','growth','note'].includes(r.kind))throw Error('记录格式无效');if(r.image&&!/^data:image\/(png|jpeg|webp);base64,/.test(r.image))throw Error('图片格式无效');return r;}
+export function validateRecord(r){if(!r||typeof r.id!=='string'||!Number.isFinite(r.timestamp)||!['art','growth','note'].includes(r.kind))throw Error('记录格式无效');if(r.plantId!==undefined&&!PLANTS.some(p=>p.id===r.plantId))throw Error('植物归属无效');if(r.image&&!/^data:image\/(png|jpeg|webp);base64,/.test(r.image))throw Error('图片格式无效');return r;}
+
+export function recordPlantId(record){if(PLANTS.some(p=>p.id===record.plantId))return record.plantId;if(record.kind==='art'&&record.mode==='pressure')return 'orchid';if(record.kind==='art'&&record.mode==='moisture')return 'round';return null;}
+export function recordsForPlant(records,id){return records.filter(r=>recordPlantId(r)===id);}
+export function recordPlantName(record){return PLANTS.find(p=>p.id===recordPlantId(record))?.name||'旧版未分类';}
