@@ -1,0 +1,8 @@
+export const archiveItems = [
+  { id: 'plant-01', category: 'plant', type: '植物观察', title: '一片叶子的生长秩序', subtitle: '叶脉 · 分叉 · 自然结构', visual: 'plant', text: '从主脉到支脉，叶片把生长的方向留在表面。观察叶缘的曲线、叶脉的分叉和疏密变化，将它们整理为数字纹样中的路径、节奏与层次。', note: '项目原创植物形态观察示意；配图为原创数字植物插画，并非物种鉴定或标本照片。' },
+  { id: 'culture-01', category: 'culture', type: '文化学习笔记', title: '把生活，一针一线留下', subtitle: '文化背景 · 地域差异 · 手工记忆', visual: 'threads', text: '本项目以苗绣为文化学习的起点，关注绣线的方向、配色与纹样组织。苗绣具有地域与群体差异，不能用一种针法或一个图案概括。本阶段尚未收录经过授权与来源核对的传统实物影像。', note: '本卡为项目学习说明；下方线迹是原创结构示意，不是传统实物，不作特定地区或支系的针法认定。正式文献与实物资料将在核验来源及授权后补充。' },
+  { id: 'digital-01', category: 'digital', type: '原创数字设计', title: '叶脉的另一种生长', subtitle: '叶脉转译 · 放射结构 · 苔色', visual: 'pattern', params: { palette: 'moss', density: 64, spread: 67, seed: 36 }, text: '把叶片的中轴与分支关系转换为放射式单元，再用断续线段表达针脚节奏。这是项目自主生成的数字图案，借鉴自然结构与绣线质感，不对应某一传统苗绣纹样。', note: '原创数字设计 · 不是传统苗绣纹样复原。可前往互动创作探索同类参数。' },
+  { id: 'plant-02', category: 'plant', type: '植物观察', title: '从分叉，到重复', subtitle: '枝叶节律 · 对称与偏移', visual: 'plant-detail', text: '植物并非机械地重复。枝条上的相似叶片保留着角度、尺寸与间距的细微差别。数字转译以重复为骨架，以适度偏移表现生命的变化。', note: '原创观察与数字插画示意，不代表具体苗绣传统。' },
+  { id: 'culture-02', category: 'culture', type: '文化学习笔记', title: '沿着线的方向观察', subtitle: '线迹方向 · 疏密 · 表面肌理', visual: 'thread-detail', text: '这里将观察拆解为三个问题：线向哪里走，线之间留多少空隙，重复单元怎样相遇。线迹示意只用于解释数字绘图参数，后续将与有出处的传统资料并置呈现。', note: '原创线迹示意，非特定传统针法教学。传统参考资料尚待核验收录。' },
+  { id: 'digital-02', category: 'digital', type: '原创数字设计', title: '靛蓝里的花序', subtitle: '针脚实验 · 靛蓝 · 层叠', visual: 'pattern', params: { palette: 'indigo', density: 77, spread: 70, seed: 61 }, text: '用靛蓝、灰蓝与少量金线色建立层次。每一片数字叶形都由多条短线构成，在相同参数下可以重现，在新的触碰中逐渐变化。', note: '原创数字设计 · 本阶段预设视觉，不是 AI 生成或传统实物。' }
+];

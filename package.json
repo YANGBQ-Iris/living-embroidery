@@ -1,0 +1,6 @@
+{
+  "name": "life-embroidery", "version": "0.1.0", "private": true, "type": "module",
+  "scripts": { "dev": "node scripts/serve.mjs", "start": "node scripts/serve.mjs", "build": "node scripts/build.mjs", "check": "node scripts/check.mjs", "test": "node tests/artwork.test.mjs" },
+  "engines": { "node": ">=20" }
+}
+
