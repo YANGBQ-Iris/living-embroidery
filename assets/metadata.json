@@ -202,18 +202,21 @@
       "width": 1080,
       "height": 720,
       "fps": 30,
-      "duration": 17.37,
+      "duration": 8.5,
       "codec": "h264",
       "pixelFormat": "yuv420p",
-      "bytes": 5549976,
-      "audio": "aac",
-      "faststart": true
+      "bytes": 3159892,
+      "audio": "none",
+      "faststart": true,
+      "trimStart": 8.5,
+      "trimEnd": 17.0
     }
   },
   "notes": [
     "Newly supplied intro and previous passage source are byte-identical. One encoded video is reused for both roles; no distinct camera movement was fabricated.",
     "Source 720x480 HEVC; preserve composition and 30 fps. Any actual black padding removal must be measured from inspection before encoding.",
-    "Inspection at 0,4,8,12,17 seconds found no fixed black border. Composition retained without cropping. Lanczos 1.5x scaling and mild unsharp improve browser presentation but cannot recreate missing source detail."
+    "Inspection at 0,4,8,12,17 seconds found no fixed black border. Composition retained without cropping. Lanczos 1.5x scaling and mild unsharp improve browser presentation but cannot recreate missing source detail.",
+    "V4.8.4 opening edit: retain 8.50–17.00 seconds of the previously prepared clip, at original speed. Ambient video and site soundtrack remain unchanged."
   ],
   "runtimeAmbient": {
     "file": "ambient.mp4",

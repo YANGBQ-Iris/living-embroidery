@@ -1,0 +1,5 @@
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),{chromium}=require('C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const browser=await chromium.launch({headless:true,channel:'chrome'}),page=await browser.newPage(),errors=[];
+page.on('pageerror',e=>errors.push(e.message));
+try{await page.goto('http://127.0.0.1:5191');await page.locator('#start-experience').click();await page.waitForFunction(()=>document.querySelector('#scene-video').currentTime>.1);const media=await page.evaluate(()=>{const v=document.querySelector('#scene-video');return {duration:v.duration,width:v.videoWidth,height:v.videoHeight,loop:v.loop};});if(Math.abs(media.duration-8.5)>.1||media.loop)throw Error('Incorrect media duration or repeat');await page.waitForFunction(()=>document.body.dataset.scene==='garden',null,{timeout:14000});if(errors.length)throw Error(errors.join(';'));console.log(JSON.stringify({media,automaticGarden:true,errors}));}finally{await browser.close();}
