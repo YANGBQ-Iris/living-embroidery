@@ -1,3 +1,4 @@
+import {WelcomeGarden} from './welcome-garden.js';
 import {PLANTS,escapeHTML as esc,selectPlant,classifyGesture,localDate,plantMood,recordPlantId,recordsForPlant,recordPlantName} from './state.js';
 import {GardenStore} from './store.js';
 import {Atmosphere} from './particles.js';
@@ -13,6 +14,7 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const ambientVideo=$('#ambient-video');
 const video=$('#scene-video'),veil=$('#transition-veil'),moduleEl=$('#module');
 const atmosphere=new Atmosphere($('#atmosphere'));
+const welcomeGarden=new WelcomeGarden($('#welcome')); 
 atmosphere.onBurst=position=>soundscape.fx('particles',position);
 const livingBackground=new LivingBackground($('#landscape'));
 let gardenWind;
@@ -28,7 +30,7 @@ document.addEventListener('garden-notify',e=>toast(e.detail));
 const wait=ms=>new Promise(r=>setTimeout(r,document.body.classList.contains('low-motion')?Math.min(ms,120):ms));
 function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),3500);}
 const dateText=t=>new Date(t).toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric'});
-function setScene(next){if(!['pressure','moisture'].includes(next)){ambientVideo.pause();ambientVideo.classList.remove('visible');}scene=next;document.body.dataset.scene=scene;if(scene==='garden'){try{localStorage.setItem('symbiotic-visited','1');}catch{}}presentation.changeScene(scene);$('#welcome').hidden=scene!=='welcome';soundscape.scene(scene);$('#arrival').hidden=scene!=='arrival';$('#passage-copy').hidden=scene!=='passage';$('#garden').hidden=['welcome','intro','arrival','passage','ending'].includes(scene);$('#garden').inert=scene!=='garden';$('#chrome').hidden=['welcome','intro','arrival','passage'].includes(scene);$('#skip').hidden=!['intro','passage'].includes(scene);moduleEl.hidden=['welcome','intro','arrival','passage','garden'].includes(scene);$('#photo-toggle').hidden=scene!=='garden';$('#finish').hidden=scene!=='garden';$('#video-retry').hidden=true;atmosphere.videoActive=['intro','passage','pressure','moisture'].includes(scene);}
+function setScene(next){if(!['pressure','moisture'].includes(next)){ambientVideo.pause();ambientVideo.classList.remove('visible');}scene=next;welcomeGarden.setActive(scene==='welcome');document.body.dataset.scene=scene;if(scene==='garden'){try{localStorage.setItem('symbiotic-visited','1');}catch{}}presentation.changeScene(scene);$('#welcome').hidden=scene!=='welcome';soundscape.scene(scene);$('#arrival').hidden=scene!=='arrival';$('#passage-copy').hidden=scene!=='passage';$('#garden').hidden=['welcome','intro','arrival','passage','ending'].includes(scene);$('#garden').inert=scene!=='garden';$('#chrome').hidden=['welcome','intro','arrival','passage'].includes(scene);$('#skip').hidden=!['intro','passage'].includes(scene);moduleEl.hidden=['welcome','intro','arrival','passage','garden'].includes(scene);$('#photo-toggle').hidden=scene!=='garden';$('#finish').hidden=scene!=='garden';$('#video-retry').hidden=true;atmosphere.videoActive=['intro','passage','pressure','moisture'].includes(scene);}
 async function playVideo({loop=false,reset=true}={}){video.loop=loop;if(reset)video.currentTime=0;try{await Promise.race([video.play(),new Promise((_,reject)=>setTimeout(()=>reject(Error('Playback timeout')),4000))]);if(!video.classList.contains('visible'))video.pause();}catch{if(['intro','passage'].includes(scene)&&video.classList.contains('visible')){$('#video-retry').hidden=false;video.dispatchEvent(new Event('error'));}}}
 $('#video-retry').onclick=async()=>{try{await video.play();$('#video-retry').hidden=true;}catch{toast('视频暂时无法播放，可跳过序幕继续体验。');}};
 video.addEventListener('playing',()=>{if(!video.classList.contains('visible'))video.pause();});

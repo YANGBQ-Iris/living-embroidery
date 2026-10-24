@@ -13,3 +13,6 @@ body[data-scene='intro'] #intro-veil.revealing{animation-duration:2.4s}.opening-
 .plant:focus-visible{outline:none}.plant:focus-visible .plant-name{outline:2px solid #567f76;outline-offset:3px}.sensor-controls h3{line-height:1.55}.generated-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#1e223c;z-index:3}.back-button:focus-visible{outline-offset:3px}
 
 body[data-scene='garden'] #landscape:after{content:'';position:absolute;inset:0;background:linear-gradient(#e7effa24,#e7effa08 55%,transparent);pointer-events:none}@media(max-width:600px){.plant-name strong{font-size:14px}.plant-name small{font-size:11px}}
+
+/* User-drawn, transient life on the black opening. */
+.welcome{touch-action:none;user-select:none;isolation:isolate}.welcome-growth{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1}.welcome button{touch-action:manipulation}
