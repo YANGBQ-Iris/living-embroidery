@@ -1,1 +1,1 @@
-{"name":"symbiotic-interlude","version":"4.5.0","private":true,"type":"module","scripts":{"start":"node scripts/serve.mjs --open","dev":"node scripts/serve.mjs","check":"node scripts/check.mjs","test":"node --test tests/state.test.mjs tests/butterfly.test.mjs"},"engines":{"node":">=20"}}
+{"name":"symbiotic-interlude","version":"4.6.0","private":true,"type":"module","scripts":{"start":"node scripts/serve.mjs --open","dev":"node scripts/serve.mjs","check":"node scripts/check.mjs","test":"node --test tests/state.test.mjs tests/butterfly.test.mjs"},"engines":{"node":">=20"}}
