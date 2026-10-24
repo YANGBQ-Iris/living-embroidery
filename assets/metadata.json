@@ -1,0 +1,223 @@
+{
+  "images": [
+    {
+      "file": "garland.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_23_13.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "size": [
+        2172,
+        643
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        9,
+        2172,
+        652
+      ]
+    },
+    {
+      "file": "photo-1.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_23_26.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "size": [
+        1070,
+        1417
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        31,
+        1070,
+        1448
+      ]
+    },
+    {
+      "file": "photo-2.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_23_43.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "size": [
+        1066,
+        1440
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        8,
+        1066,
+        1448
+      ]
+    },
+    {
+      "file": "photo-3.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_23_53.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "size": [
+        1082,
+        1425
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        15,
+        1082,
+        1440
+      ]
+    },
+    {
+      "file": "photo-4.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_24_04.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "size": [
+        1056,
+        1391
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        57,
+        1056,
+        1448
+      ]
+    },
+    {
+      "file": "plant-violet.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_24_13.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "size": [
+        1086,
+        1448
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        0,
+        1086,
+        1448
+      ]
+    },
+    {
+      "file": "plant-round.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_24_17.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "size": [
+        1086,
+        1447
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        1,
+        1086,
+        1448
+      ]
+    },
+    {
+      "file": "plant-white.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_24_24.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "size": [
+        1086,
+        1448
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        0,
+        1086,
+        1448
+      ]
+    },
+    {
+      "file": "plant-orchid.png",
+      "source": "ChatGPT 图像 2026年10月24日 23_24_31.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "size": [
+        1254,
+        1245
+      ],
+      "alpha": true,
+      "bbox": [
+        0,
+        9,
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "garden-reference.jpg",
+      "source": "梦幻花园与飘浮花笺.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha": false
+    },
+    {
+      "file": "sky-background.jpg",
+      "source": "梦幻樱花花海与流光晴空.png",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha": false
+    }
+  ],
+  "videos": {
+    "source": {
+      "file": "a5ff260d20900ee2f0ea652718ff7659.mp4",
+      "sha256": "7a89c15c2c7993377b14828ffebca7241a4608616894bdd08cf8df9b0a8f7e50",
+      "metadata": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\\软件中心\\常规软件\\微信\\liaotian\\xwechat_files\\wxid_8vk0khk7ftsx22_a335\\msg\\video\\2026-10\\a5ff260d20900ee2f0ea652718ff7659.mp4':\n  Metadata:\n    minor_version   : 512\n    major_brand     : isom\n    compatible_brands: isomiso2mp41\n    copyright       : \n    copyright-eng   : \n    wxMeta          : {\"WXVer\":671108411}\n    encoder         : Lavf58.20.100\n  Duration: 00:00:17.37, start: 0.000000, bitrate: 382 kb/s\n  Stream #0:0[0x1](und): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt470bg/bt470bg/bt709), 720x480, 321 kb/s, 30 fps, 30 tbr, 90k tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 49 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n"
+    },
+    "passageAlias": "intro.mp4",
+    "prepared": {
+      "file": "intro.mp4",
+      "width": 1080,
+      "height": 720,
+      "fps": 30,
+      "duration": 17.37,
+      "codec": "h264",
+      "pixelFormat": "yuv420p",
+      "bytes": 5549976,
+      "audio": "aac",
+      "faststart": true
+    }
+  },
+  "notes": [
+    "Newly supplied intro and previous passage source are byte-identical. One encoded video is reused for both roles; no distinct camera movement was fabricated.",
+    "Source 720x480 HEVC; preserve composition and 30 fps. Any actual black padding removal must be measured from inspection before encoding.",
+    "Inspection at 0,4,8,12,17 seconds found no fixed black border. Composition retained without cropping. Lanczos 1.5x scaling and mild unsharp improve browser presentation but cannot recreate missing source detail."
+  ],
+  "runtimeAmbient": {
+    "file": "ambient.mp4",
+    "source": "intro.mp4",
+    "processing": "640x426, 20fps, preprocessed soft focus for sensor background"
+  }
+}

@@ -186,3 +186,8 @@ node_modules/
 !.env.example
 !src/lib/
 !src/lib/**
+
+# Local QA outputs and personal exports
+artifacts/
+.tools/
+*.zip

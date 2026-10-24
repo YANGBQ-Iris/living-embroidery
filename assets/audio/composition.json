@@ -1,0 +1,11 @@
+{
+  "name": "Garden Interlude — felt piano edition",
+  "durationSeconds": 64,
+  "sampleRate": 44100,
+  "channels": 2,
+  "creation": "Original local procedural synthesis: warm felt-piano-like additive partials, soft pads, deterministic air bed, cyclic delays. No third-party recordings; synthesized, not an acoustic piano recording.",
+  "peak": 0.41636840371544476,
+  "rms": 0.09894436116711805,
+  "file": "garden-interlude.mp3",
+  "bytes": 1281088
+}
