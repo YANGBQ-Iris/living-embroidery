@@ -1,14 +1,18 @@
 # 共生间隙 · Symbiotic Interlude
 
-当前版本 **V4.8.6**。蓝粉花海中的植物互动艺术网站，保留温柔陪伴、英文标题、白色宋体呼吸光和天空花笺。
+当前版本 **V4.8.7**。蓝粉花海中的植物互动艺术网站，保留温柔陪伴、英文标题、白色宋体呼吸光和天空花笺。
 
 ## 在线体验
 
-[打开共生间隙](https://symbiotic-interlude-garden.yangbingqian54.chatgpt.site) · 手机、电脑可同时访问，无需登录。
+[打开共生间隙](https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/) · 手机、电脑可同时访问，无需登录。
 
 ![扫码体验](docs/share/共生间隙-扫码体验.png)
 
-在线演示由 Sites 托管；GitHub `web-ui` 分支保存源代码。各设备的作品保存在各自浏览器，不自动同步。
+在线演示新增独立 GitHub Pages 发布副本，团队 `web-ui` 分支保存源代码。此前 chatgpt.site 入口有手机遭 Cloudflare 拦截的反馈，新入口已由用户确认可在真实手机上正常进入花园。各设备的作品保存在各自浏览器，不自动同步。
+
+[电脑与模型可读的项目页](https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/project.html) · [纯文本说明](https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/llms.txt) · [独立部署说明](DEPLOYMENT.md)
+
+运行 `npm run build` 生成可独立托管的 `dist/`。无需账号或在线 AI 服务。
 
 ## 运行
 

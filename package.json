@@ -1,13 +1,14 @@
 {
   "name": "symbiotic-interlude",
-  "version": "4.8.6",
+  "version": "4.8.7",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node scripts/serve.mjs --open",
     "dev": "node scripts/serve.mjs",
     "check": "node scripts/check.mjs",
-    "test": "node --test tests/state.test.mjs tests/butterfly.test.mjs tests/water.test.mjs tests/ownership.test.mjs"
+    "test": "node --test tests/state.test.mjs tests/butterfly.test.mjs tests/water.test.mjs tests/ownership.test.mjs",
+    "build": "node scripts/build-static.mjs"
   },
   "engines": {
     "node": ">=20.11"

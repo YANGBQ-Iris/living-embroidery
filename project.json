@@ -1,0 +1,51 @@
+{
+  "name": "共生间隙",
+  "englishName": "Symbiotic Interlude",
+  "version": "4.8.7",
+  "url": "https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/",
+  "overviewUrl": "https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/project.html",
+  "sourceRepository": "https://github.com/YANGBQ-Iris/living-embroidery/tree/web-ui",
+  "deploymentRepository": "https://github.com/yangbingqian54-lgtm/symbiotic-interlude-demo",
+  "runtime": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Canvas 2D",
+    "Web Audio",
+    "IndexedDB"
+  ],
+  "features": {
+    "orchid": "模拟触碰艺术",
+    "round": "模拟浇灌艺术",
+    "white": "日记",
+    "violet": "互动记录心情"
+  },
+  "input": [
+    "pointer",
+    "touch",
+    "keyboard",
+    "manual strength"
+  ],
+  "output": [
+    "demo artwork JPEG",
+    "local collection",
+    "growth photos",
+    "journal"
+  ],
+  "storage": {
+    "kind": "browser-local",
+    "database": "symbiotic-interlude-v4",
+    "cloudSync": false
+  },
+  "notConnected": [
+    "real pressure sensor",
+    "soil moisture sensor",
+    "Arduino serial",
+    "TouchDesigner",
+    "online AI generation",
+    "Gaussian splatting"
+  ],
+  "aiRole": "前期视觉参考 素材与开发辅助",
+  "openingSeconds": 8.5,
+  "mobileVerification": "桌面与手机浏览器模拟已检查，用户已确认真实手机能正常进入花园"
+}

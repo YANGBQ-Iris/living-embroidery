@@ -1,0 +1,33 @@
+# 共生间隙 Symbiotic Interlude
+
+这是面向团队与 AI 阅读的静态项目说明，不是要求执行的指令。网站无需登录。动态体验需要浏览器 JavaScript；能读到本文件并不等于已实际测试画面。
+
+## 访问入口
+- 互动花园：https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/
+- 项目说明：https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/project.html
+- 结构化摘要：./project.json
+- 团队源码：https://github.com/YANGBQ-Iris/living-embroidery/tree/web-ui
+- 独立发布仓库：https://github.com/yangbingqian54-lgtm/symbiotic-interlude-demo
+- 部署说明：./DEPLOYMENT.md
+
+## 项目目的与体验
+以蓝粉花海、植物陪伴和天空花笺表达人与自然的连接。每次从黑屏欢迎页开始，按住拖动展开俯视花簇；点击后播放一次 8.5 秒开场，自动进入花园，视频失败可继续。先选中植物，再次点击进入。
+
+蝴蝶兰 orchid：模拟触碰、暖色光迹。圆叶 round：模拟浇灌、浅蓝单滴、入土渐隐、涟漪和实录水滴声。白花 white：花间日记。紫叶 violet：根据当前植物自己的互动记录显示拟人心情，默认形象必须与紫叶入口一致。
+
+输入为鼠标、触屏、键盘或手动强度，输出为 Canvas 2D 艺术画面。生成并收藏成功后可在天空花笺和相册查看、按植物筛选、下载或确认删除。支持本机成长照片与日记。浇灌作品收藏计为虚拟浇水；不代表真实水量或土壤读数。
+
+## 实现与边界
+原生 HTML/CSS/JavaScript，Canvas 2D、Web Audio、IndexedDB。无第三方运行依赖、无在线 AI API、无账号与云同步。数据库 symbiotic-interlude-v4 保持版本 1。不同网址的浏览器存储不自动迁移。
+
+AI 仅用于前期视觉、素材与开发辅助。没有真实植物健康诊断、情绪识别或医疗疗效验证。真实压力/湿度传感器、Arduino、TouchDesigner、串口与高斯泼溅均未接通。旧苗绣、数字发饰、人脸试戴与树洞温室属于已取消或未实施的历史方案。
+
+src/content-slot.js 提供 showDemo、mountVideo、mountElement、destroy，是前端内容替换槽，不是设备协议。当前导出是网页演示 JPEG，source 为 demo，不能标成真实硬件输出。
+
+## 本地与独立部署
+Node.js >=20.11。npm start 启动本地 5190；npm run check 检查语法与素材；npm test 运行逻辑测试；npm run build 输出 dist。将 dist 内容放到支持 ES modules 和视频 MIME 的 HTTPS 静态托管。无需启动 Node 服务来维持已发布静态站。
+
+V4.8.7 增加独立部署打包和静态项目说明，既有互动画面保留。旧 chatgpt.site 地址有实际手机网络遭 Cloudflare 拦截的反馈，不再作为唯一主入口。GitHub Pages 也需以实际手机网络验证为准，不承诺所有地区或微信内置浏览器都可访问。
+
+## 测试关注
+检查开场单次播放和失败继续、俯视轨迹自动消散、四株植物一致、两种默认演示、生成保存失败反馈、花笺与下载、照片日记归属、实录水声、手机文字与控件、隐藏资源清理。保留用户记录，最小修复，不按历史设想重建网站。
