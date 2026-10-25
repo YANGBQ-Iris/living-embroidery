@@ -1,5 +1,9 @@
 import path from 'node:path';
 import {readFile} from 'node:fs/promises';
+export function parseSensorSnapshot(text){
+ // TD/Python can emit non-JSON numeric tokens; preserve quoted text verbatim.
+ return JSON.parse(text.replace(/("(?:\\.|[^"\\])*")|\b(?:NaN|Infinity)\b|-Infinity/g,(token,quoted)=>quoted||'null'));
+}
 export function sensorStatus(data,now=Date.now()){
  const alive=Boolean(data&&Number.isFinite(data.timestamp)&&now-data.timestamp>=-1000&&now-data.timestamp<2500);
  if(!alive)return {connected:false,tdConnected:false,source:'disconnected',pressure:null,moisture:null,frames:{}};
@@ -13,7 +17,7 @@ export function createSensorApi(root){
  return async(req,res)=>{
   const url=new URL(req.url,'http://localhost');if(!['/api/sensors','/api/sensor-frame'].includes(url.pathname))return false;
   if(req.method!=='GET'){send(res,405,{error:'仅支持读取传感器状态'});return true;}
-  try{latest=JSON.parse(await readFile(path.join(runtime,'sensors.json'),'utf8'));}catch{}
+  try{latest=parseSensorSnapshot(await readFile(path.join(runtime,'sensors.json'),'utf8'));}catch{}
   const data=sensorStatus(latest);
   if(url.pathname==='/api/sensors'){send(res,200,data);return true;}
   const scene=url.searchParams.get('scene');
