@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>共生间隙 项目说明与网页体验</title>
+<meta name="description" content="共生间隙是一个植物陪伴与互动艺术网页。本页无需登录或运行 JavaScript，即可阅读功能、输入输出、技术边界、源码与部署说明。">
+<meta name="theme-color" content="#edf2fb"><link rel="stylesheet" href="src/project.css">
+<link rel="alternate" type="text/plain" href="llms.txt" title="供 AI 阅读的项目说明">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"共生间隙 Symbiotic Interlude","description":"植物陪伴与互动艺术网页，含模拟触碰、浇灌、作品收藏与成长记录。","inLanguage":"zh-CN","url":"https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/project.html","isAccessibleForFree":true}</script>
+</head>
+<body>
+<header><a class="wordmark" href="project.html">Symbiotic <em>Interlude</em><span>共生间隙</span></a><nav aria-label="项目导航"><a href="#experience">体验内容</a><a href="#implementation">实现边界</a><a href="#handoff">源码与部署</a></nav></header>
+<main>
+<section class="hero" aria-labelledby="title"><div class="hero-copy"><p class="eyebrow">植物陪伴与互动艺术</p><h1 id="title">留一点时间，<br>与自然相遇。</h1><p class="intro">在蓝粉花海里轻触一株植物，让指尖变成光迹，让一滴雨留下涟漪。收藏这次相遇，把作品夹进天空花笺，再下载带走。</p><div class="actions"><a class="primary" href="index.html">进入互动花园 <span aria-hidden="true">↗</span></a><a class="secondary" href="llms.txt">阅读项目文本</a></div><p class="small">手机、电脑共用一个入口。声音在首次操作后开启，作品保存在当前浏览器。</p></div><figure><img src="assets/garden-reference.jpg" alt="蓝色天空与粉色花海中的四株植物和天空花笺" width="1672" height="941"><figcaption>共生间隙的花园场景</figcaption></figure></section>
+<section id="experience" class="section"><p class="eyebrow">如何体验</p><h2>一次轻触，慢慢靠近。</h2><p>黑屏欢迎页可按住拖动，展开俯视花簇；点击进入后播放一次约 8.5 秒的开场，随后自动抵达花园。视频加载失败时，仍可使用“直接进入花园”。先选中植物，再次点击进入对应功能。</p><dl class="plants"><div><dt>蝴蝶兰</dt><dd>触碰与暖色光迹。通过鼠标、触屏、键盘或按钮，创作并收藏一幅艺术画面。</dd></div><div><dt>圆叶</dt><dd>浇灌与水滴涟漪。每次操作落下一滴清透水滴，配合实录滴水声，穿过土壤后渐隐。</dd></div><div><dt>白花</dt><dd>观察与花间日记。记录日期、植物归属和一句观察，也可上传自己的成长照片。</dd></div><div><dt>紫叶</dt><dd>陪伴与互动心情。根据所选植物的本机记录展示拟人反馈，可切换查看四株植物。</dd></div></dl><p>生成并收藏成功后，作品会定格供查看。进入天空花笺与相册，可放大、筛选、下载或确认删除。浇灌艺术作品的收藏记录计为一次虚拟浇水。</p></section>
+<section id="implementation" class="section boundary"><div><p class="eyebrow">输入与输出</p><h2>看得见的回应，<br>说得清的边界。</h2></div><div><h3>已经实现</h3><p>鼠标、触屏和手动强度输入 → Canvas 2D 本地艺术算法 → 作品截图 → IndexedDB 本机收藏 → 天空花笺与下载。触碰与浇灌有不同视觉和声音反馈，支持照片、日记与植物归属。</p><h3>AI 的实际作用</h3><p>AI 用于前期视觉参考、素材与开发辅助。当前运行时没有在线 AI 文生图、模型推理、植物情绪识别或健康诊断。心情是互动记录的艺术表达，不是养护建议。</p><h3>还未接入</h3><p>真实压力与土壤湿度传感器、Arduino 串口、TouchDesigner 实时输出、高斯泼溅世界和云端作品同步均未接通。已保留前端内容替换槽，不能据此认为设备已连接。</p></div></section>
+<section id="handoff" class="section"><p class="eyebrow">供团队与其他模型查看</p><h2>从网页到源码，都可以直接阅读。</h2><p>此页是静态 HTML，正文不需要 JavaScript、登录或观看开场。可以把本页网址或下列文本地址交给其他模型；模型是否能联网及读取动态画面，取决于其自身工具。阅读说明不代表它已实际操作过网站。</p><ul class="resources"><li><a href="llms.txt">纯文本项目说明 <span>llms.txt</span></a></li><li><a href="project.json">结构化功能与接入状态 <span>project.json</span></a></li><li><a href="https://github.com/YANGBQ-Iris/living-embroidery/tree/web-ui">团队源码 <span>web-ui 分支</span></a></li><li><a href="https://github.com/yangbingqian54-lgtm/symbiotic-interlude-demo">独立发布仓库 <span>GitHub Pages</span></a></li><li><a href="DEPLOYMENT.md">独立部署说明 <span>静态托管与本地启动</span></a></li></ul><p class="small">本机记录随网址、协议和端口区分。更换到新站点后，不会自动带入旧站点的收藏；请从旧站点下载作品或导出备份。无需让本地电脑持续开机来维持线上访问。</p><a class="primary" href="index.html">开始这次相遇 ↗</a></section>
+</main><footer>共生间隙 · Symbiotic Interlude <span>独立静态发布版 V4.8.7</span></footer>
+</body></html>

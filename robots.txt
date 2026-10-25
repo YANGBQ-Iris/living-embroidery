@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yangbingqian54-lgtm.github.io/symbiotic-interlude-demo/sitemap.xml
