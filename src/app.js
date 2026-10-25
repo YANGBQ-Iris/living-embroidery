@@ -42,7 +42,7 @@ video.addEventListener('error',()=>{if(['intro','passage'].includes(scene)){toas
 async function init(){
  $('#plants').innerHTML=PLANTS.map(p=>`<button class="plant" data-plant="${p.id}" aria-label="${p.name}，${p.hint}" aria-pressed="false"><img src="assets/${p.file}" alt="${p.name}"><span class="plant-name"><strong>${p.name}</strong><small>${({pressure:'触碰艺术',journal:'记录日记',moisture:'浇灌艺术',mood:'查看心情'})[p.module]}</small></span></button>`).join('');
  const captions=['生长照片','相遇作品','植物心情','花间日记'];const opens=['growth','collection','mood','journal'];const tops=['15%','22%','22%','15%'];
- $('#photo-hangers').innerHTML=captions.map((c,i)=>`<button class="hanging-photo" data-open="${opens[i]}" style="--left:${18+i*21.3}%;--top:${tops[i]};--angle:${[-5,3,-3,5][i]}deg"><img src="assets/photo-${i+1}.png" alt=""><span>${c}</span></button>`).join('');
+ $('#photo-hangers').innerHTML=captions.map((c,i)=>`<button class="hanging-photo" data-open="${opens[i]}" style="--left:${18+i*21.3}%;--top:${tops[i]};--angle:${[-5,3,-3,5][i]}deg"><img src="assets/motifs/photo-${i+1}.svg" alt=""><span>${c}</span></button>`).join('');
  gardenWind=new GardenWind();
  try{store=await new GardenStore().open();records=await store.records();const reduced=await store.setting('lowMotion');if(reduced||atmosphere.reduced)setLowMotion(true);}catch{toast('本机存储不可用；仍可体验与下载作品，但无法保存记录。');}
  const loaded=await Promise.race([Promise.all(PLANTS.map(p=>{const image=new Image();image.src='assets/'+p.file;return image.decode().then(()=>true,()=>false);})),new Promise(resolve=>setTimeout(()=>resolve(null),2500))]);

@@ -1,0 +1,32 @@
+/* Palette and ornament only. Geometry of plants and all interaction controls stays intact. */
+:root{--ink:#374f58;--miao-pink:#ec9bb5;--miao-jade:#73a397;--miao-silver:#edf0e8;--miao-thread:#f4d2bb}
+#landscape{background-color:#bdd6e4;background-image:url('../assets/embroidered-garden.svg')}
+#experience:after{background-image:url('../assets/motifs/rosette-0.svg'),url('../assets/motifs/silver-spiral.svg');background-size:185px 185px,250px 250px;background-position:-72px 75%,calc(100% + 110px) 35%;background-repeat:no-repeat;opacity:.38;pointer-events:none}
+.garden-heading>p{color:#fffaf1;text-shadow:0 2px 14px #456a80a0}
+.garden-heading>span,.sky-invitation{color:#365566;text-shadow:0 1px 9px #eef4f4c0}
+.plant-caption{color:#385c61;text-shadow:0 1px 8px #fff9ed}
+.chrome nav button,.plant-name,.back-button{background:#f8f5f0d6;border:1px solid #f8e3de;box-shadow:inset 0 0 0 3px #ffffff20}
+.chrome nav button:focus-visible,.plant:focus-visible{outline:2px solid #638e86;outline-offset:5px}
+.plant.selected .plant-name{background:#fff4ed;border-color:#cc879d;color:#554c5d}
+.plant.selected:after{border-color:#eed9c8}
+.sensor-controls{background-color:#f9f6f1bd;border-color:#f0d8df;box-shadow:inset 0 0 0 5px #fff9f030,0 15px 40px #486d7510;background-image:url('../assets/motifs/rosette-2.svg');background-repeat:no-repeat;background-size:140px;background-position:right -60px bottom -38px}
+.sensor-controls .primary,.primary{background:#547e78;color:#fffaf0}
+.sensor-controls .secondary{background:#fffcf5cc;border-color:#c8b9b2}
+.prototype-frame{border:1px solid #bdc5c5;box-shadow:0 0 0 5px #f4e8df45,inset 0 0 0 1px #f7d6d3}
+.paper-shell{background-color:#fdf9f0f7;border-color:#f0d9db;background-image:url('../assets/motifs/rosette-2.svg'),radial-gradient(#9c9e8b1a .6px,transparent .6px);background-size:175px,4px 4px;background-repeat:no-repeat,repeat;background-position:right -90px top -85px,0 0}
+.paper-shell:before{background:#c7a0a154;width:1px;border-right:1px dashed #b88f9b55}
+.gallery-shell{background-color:#f7f4edee;border:1px solid #e5cdd5}
+.hanging-photo>span{background:#fef9f0e8;color:#476d67;border:1px solid #e9ccd5}
+.hanging-photo img:not(.memory-preview){filter:drop-shadow(0 8px 16px #44687820)}
+#about-dialog{background-color:#faf6efeF;border-color:#e6c3ce;background-image:url('../assets/motifs/rosette-1.svg');background-size:165px;background-position:right -80px top -75px;background-repeat:no-repeat}
+.welcome{background:#03080b}.welcome>p{color:#e6c9d2}.welcome button{border-color:#b0c3b33d}.welcome button:hover{border-color:#e6a8bc77;background:#efd9dc0a}
+#video-soften{background:rgba(232,241,235,.66)}
+body[data-scene="garden"] #experience:after,body[data-scene="ending"] #experience:after{opacity:.25}
+@media(max-width:600px){#experience:after{background-size:105px,150px;background-position:-50px 74%,calc(100% + 85px) 30%}.sensor-controls{background-size:100px}.paper-shell{background-size:125px,4px 4px}}
+/* A skipped film must not leave its black reveal layer over the garden. */
+body:not([data-scene="intro"]):not([data-scene="passage"]) #intro-veil{opacity:0;visibility:hidden}
+/* Keep the branch's existing photo studio; only dress its surrounding controls. */
+.studio-enter{background:#f8f1e7c9;border:1px solid #d8bfc7;color:#3c6260}
+.studio-upload-button{border-color:#e6b9ca;color:#f9e7ed}
+#plant-studio:after{content:'';position:absolute;inset:0;pointer-events:none;background:url('../assets/motifs/silver-spiral.svg') no-repeat calc(100% + 65px) 25%;background-size:200px;opacity:.19;z-index:2}
+@media(max-width:600px){.studio-enter{bottom:34vh;font-size:10px;background:#f7f2e7dc}}
