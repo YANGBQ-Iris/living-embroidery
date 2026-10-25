@@ -1,0 +1,4 @@
+.sensor-live-canvas.external-content{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;pointer-events:none}
+.hardware-readings{margin-top:4px;border-top:1px solid #738c8b38;padding-top:12px;font-size:11px;color:#506b70}
+.hardware-readings summary{cursor:pointer;letter-spacing:.04em}.hardware-readings dl{margin:12px 0 0}.hardware-readings dl div{display:flex;justify-content:space-between;gap:8px;margin:8px 0}.hardware-readings dt,.hardware-readings dd{margin:0}.hardware-readings dd{font-variant-numeric:tabular-nums}
+.status-dot[data-source="disconnected"]::before{background:#b79b7e}.status-dot[data-source="simulation"]::before{background:#a696bc}

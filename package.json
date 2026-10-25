@@ -7,7 +7,7 @@
     "start": "node scripts/serve.mjs --open",
     "dev": "node scripts/serve.mjs",
     "check": "node scripts/check.mjs",
-    "test": "node --test tests/state.test.mjs tests/butterfly.test.mjs tests/water.test.mjs tests/ownership.test.mjs"
+    "test": "node --test tests/state.test.mjs tests/butterfly.test.mjs tests/water.test.mjs tests/ownership.test.mjs tests/plant-api.test.mjs tests/sensors.test.mjs"
   },
   "engines": {
     "node": ">=20.11"

@@ -191,3 +191,10 @@ node_modules/
 artifacts/
 .tools/
 *.zip
+
+# Local plant uploads, models, stream frames and validation
+.runtime/
+output/
+
+td/*.toe.bkp*
+td/Backup/

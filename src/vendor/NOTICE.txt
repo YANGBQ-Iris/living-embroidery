@@ -1,0 +1,9 @@
+GSAP 3.13.0 and ScrollTrigger 3.13.0
+Copyright 2025 GreenSock. All rights reserved.
+Subject to https://gsap.com/standard-license/
+Original files: https://www.npmjs.com/package/gsap/v/3.13.0
+
+U2Net model (downloaded separately into .runtime/models):
+U-2-Net by Xuebin Qin et al. https://github.com/xuebinqin/U-2-Net
+Apache License 2.0. Model distribution: https://github.com/danielgatis/rembg/releases
+The Python runner uses ONNX Runtime, NumPy and Pillow installed on this machine.
