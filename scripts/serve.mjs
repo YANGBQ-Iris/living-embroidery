@@ -16,7 +16,7 @@ function openBrowser(url){if(process.argv.includes('--open')&&process.platform==
 server.on('error',async e=>{
  if(e.code==='EADDRINUSE'){
   const url=`http://127.0.0.1:${port}`;
-  try{const response=await fetch(url,{signal:AbortSignal.timeout(3000)});const html=await response.text();if(response.ok&&html.includes('<title>Symbiotic Interlude')&&html.includes('src/app.js')){console.log(`Already running. Opening: ${url}`);openBrowser(url);process.exitCode=0;return;}}catch{}
+  try{const response=await fetch(url,{signal:AbortSignal.timeout(3000)});const html=await response.text();if(response.ok&&html.includes('<title>Living Embroidery')&&html.includes('src/app.js')){console.log(`Already running. Opening: ${url}`);openBrowser(url);process.exitCode=0;return;}}catch{}
   console.error(`Port ${port} is used by another application. Close that application or use a different PORT.`);
  }else console.error(e.message);
  process.exitCode=1;
