@@ -2,7 +2,7 @@ import {embroiderySprite} from './embroidery.js';
 // A bounded canvas trail: only runs while marks are alive, never over controls.
 export class WelcomeGarden {
  constructor(host){
-  this.sprites=[embroiderySprite(),embroiderySprite("four"),embroiderySprite("silver")];this.host=host;this.active=true;this.reduced=matchMedia('(prefers-reduced-motion: reduce)');this.ambient=Array.from({length:innerWidth<600?32:56},(_,i)=>({x:Math.random(),y:Math.random(),phase:Math.random()*6.28,speed:.006+Math.random()*.008,size:.6+Math.random()*1.8,petal:i%3===0}));this.marks=[];this.pointer=null;this.lastPoint=null;
+  this.sprites=[embroiderySprite(),embroiderySprite("four"),embroiderySprite("silver")];this.host=host;this.active=true;this.reduced=matchMedia('(prefers-reduced-motion: reduce)');this.ambient=Array.from({length:innerWidth<600?40:68},(_,i)=>({x:Math.random(),y:Math.random(),phase:Math.random()*6.28,speed:.006+Math.random()*.008,size:.6+Math.random()*1.8,petal:i%3===0}));this.marks=[];this.pointer=null;this.lastPoint=null;
   this.canvas=document.createElement('canvas');this.canvas.className='welcome-growth';this.canvas.setAttribute('aria-hidden','true');host.prepend(this.canvas);this.ctx=this.canvas.getContext('2d');
   this.resize=()=>{const r=host.getBoundingClientRect();this.width=r.width;this.height=r.height;const d=Math.min(devicePixelRatio||1,1.5);this.canvas.width=Math.round(r.width*d);this.canvas.height=Math.round(r.height*d);this.ctx.setTransform(d,0,0,d,0,0);};
   window.addEventListener('resize',this.resize);this.resize();
@@ -25,7 +25,7 @@ export class WelcomeGarden {
   const still=this.reduced.matches||document.body.classList.contains('low-motion'),t=still?0:now*.001;c.save();
   for(const p of this.ambient){const x=(p.x+Math.sin(t*.11+p.phase)*.028)*this.width,y=((p.y+t*p.speed)%1)*this.height;
    const nearTitle=Math.abs(x/this.width-.5)<.3&&y/this.height>.26&&y/this.height<.76;
-   c.save();c.translate(x,y);c.rotate(p.phase+t*.08);c.globalAlpha=(.14+(Math.sin(t*.32+p.phase)+1)*.11)*(nearTitle?.3:1);
+   c.save();c.translate(x,y);c.rotate(p.phase+t*.08);c.globalAlpha=(.22+(Math.sin(t*.32+p.phase)+1)*.12)*(nearTitle?.3:1);
    if(p.petal){c.fillStyle=p.phase>3?'#e8afcb':'#b2cfc1';c.beginPath();c.moveTo(-p.size*3,0);c.bezierCurveTo(-p.size,-p.size*2.7,p.size*3,-p.size*2.7,p.size*3,0);c.bezierCurveTo(p.size,p.size*2,-p.size,p.size*2,-p.size*3,0);c.fill();}
    else{c.fillStyle=p.phase>3?'#dbd9ef':'#f1dfc5';c.beginPath();c.arc(0,0,p.size*.65,0,Math.PI*2);c.fill();}
    c.restore();

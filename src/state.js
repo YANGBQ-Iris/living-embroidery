@@ -1,6 +1,6 @@
 export const PLANTS = [
  {id:'orchid',name:'蝴蝶兰',en:'A gentle touch',file:'plant-orchid.png',module:'pressure',hint:'触碰 · 光迹回应'},
- {id:'white',name:'白花',en:'Little observations',file:'plant-white.png',module:'journal',hint:'观察 · 花间日记'},
+ {id:'white',name:'白花',en:'Pattern library',file:'plant-white.png',module:'journal',hint:'纹样 · 收藏与上传'},
  {id:'round',name:'圆叶',en:'A little rain',file:'plant-round.png',module:'moisture',hint:'浇灌 · 水滴回应'},
  {id:'violet',name:'紫叶',en:'Quiet feelings',file:'plant-violet.png',module:'mood',hint:'陪伴 · 植物心情'}
 ];
